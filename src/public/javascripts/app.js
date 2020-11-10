@@ -8,6 +8,7 @@ Chart.defaults.global.elements.line.borderColor = "rgba(0,0,0,0.9)";
 Chart.defaults.global.elements.line.borderWidth = 2;
 
 var socket = io(location.protocol + '//' + location.hostname + ':' + location.port);
+
 var defaultSpan = 0;
 var spans = [];
 var statusCodesColors = ['#75D701', '#47b8e0', '#ffc952', '#E53A40'];
@@ -117,6 +118,11 @@ var onSpanChange = function (e) {
 };
 
 socket.on('start', function (data) {
+
+  socket.emit("authenticate", { token: "StatusMonitor" }, async response => {
+    console.log(`Hapi status monitor socket authenticated!`);
+  });
+
   // Remove last element of Array because it contains malformed responses data.
   // To keep consistency we also remove os data.
   data[defaultSpan].responses.pop();
