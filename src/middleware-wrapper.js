@@ -20,7 +20,14 @@ const middlewareWrapper = (server, options) => {
       const renderedHtml =
         fs.readFileSync(path.join(__dirname, '/public/index.html'))
           .toString()
-          .replace(/{{title}}/g, opts.title)
+          .replace(/{{title}}/g, opts.strings.title)
+          .replace(/{{cpu_usage}}/g, opts.strings.cpu_usage)
+          .replace(/{{memory_usage}}/g, opts.strings.memory_usage)
+          .replace(/{{one_minute_load_average}}/g, opts.strings.one_minute_load_average)
+          .replace(/{{response_time}}/g, opts.strings.response_time)
+          .replace(/{{requests_per_second}}/g, opts.strings.requests_per_second)
+          .replace(/{{status_codes}}/g, opts.strings.status_codes)
+          .replace(/{{footer}}/g, opts.strings.footer)
           .replace(/{{script}}/g, fs.readFileSync(path.join(__dirname, '/public/javascripts/app.js')))
           .replace(/{{style}}/g, fs.readFileSync(path.join(__dirname, '/public/stylesheets/style.css')));
 

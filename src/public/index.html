@@ -17,7 +17,7 @@
   </div>
   <div class="container">
     <div class="stats-column">
-      <h5>CPU Usage</h5>
+      <h5>{{cpu_usage}}</h5>
       <h1 id="cpuStat">- %</h1>
     </div>
     <div class="chart-container">
@@ -26,7 +26,7 @@
   </div>
   <div class="container">
     <div class="stats-column">
-      <h5>Memory Usage</h5>
+      <h5>{{memory_usage}}</h5>
       <h1 id="memStat">- %</h1>
     </div>
     <div class="chart-container">
@@ -35,7 +35,7 @@
   </div>
   <div class="container">
     <div class="stats-column">
-      <h5>One Minute Load Avg</h5>
+      <h5>{{one_minute_load_average}}/h5>
       <h1 id="loadStat">-</h1>
     </div>
     <div class="chart-container">
@@ -44,7 +44,7 @@
   </div>
   <div class="container">
     <div class="stats-column">
-      <h5>Response Time</h5>
+      <h5>{{response_time}}</h5>
       <h1 id="responseTimeStat">-</h1>
     </div>
     <div class="chart-container">
@@ -53,7 +53,7 @@
   </div>
   <div class="container">
     <div class="stats-column">
-      <h5>Requests per Second</h5>
+      <h5>{{requests_per_second}}</h5>
       <h1 id="rpsStat">-</h1>
     </div>
     <div class="chart-container">
@@ -62,7 +62,7 @@
   </div>
   <div class="container">
     <div class="stats-column">
-      <h5>Status Codes</h5>
+      <h5>{{status_codes}}</h5>
       <h6 class="status-code status-code-2xx">2xx</h6>
       <h6 class="status-code status-code-3xx">3xx</h6>
       <h6 class="status-code status-code-4xx">4xx</h6>
@@ -73,7 +73,7 @@
     </div>
   </div>
   <div class="footer">
-    <p>2020 Acoly server monitor</p>
+    <p>{{footer}}</p>
   </div>
 </div>
 <script>

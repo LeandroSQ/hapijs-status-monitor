@@ -1,6 +1,15 @@
 module.exports = {
-  title: 'hapi.js Status',
   path: '/status',
+  strings: {
+    title: 'hapi.js Status',
+    "cpu_usage": "CPU Usage",
+    "memory_usage": "Memory Usage",
+    "one_minute_load_average": "One Minute Load Avg",
+    "response_time": "Response Time",
+    "requests_per_second": "Requests Per Second",
+    "status_codes": "Status Codes",
+    "footer": "Made with &#9829; with Socket.io & Chart.js"
+  },
   spans: [
     {
       interval: 1,
