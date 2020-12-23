@@ -13,7 +13,7 @@ module.exports = (config) => {
     if (!defaultConfig.strings.hasOwnProperty(property)) continue;
 
     if (typeof cfg.strings[property] !== 'string') {
-      cfg.strings = defaultConfig[property];
+      cfg.strings[property] = defaultConfig.strings[property];
     }
   }
 
