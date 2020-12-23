@@ -7,6 +7,16 @@ module.exports = (config) => {
     return defaultConfig;
   }
 
+  // Maps every property inside the strings object
+  if (!cfg.strings) cfg.strings = {};
+  for (let property in defaultConfig.strings) {
+    if (!defaultConfig.strings.hasOwnProperty(property)) continue;
+
+    if (typeof cfg.strings[property] !== 'string') {
+      cfg.strings = defaultConfig[property];
+    }
+  }
+
   if (typeof cfg.title !== 'string') {
     cfg.title = defaultConfig.title;
   }
